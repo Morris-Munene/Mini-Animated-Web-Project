@@ -1,0 +1,46 @@
+<tr>
+      <th>Project</th>
+      <th>Status</th>
+      <th>Language</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Web Scraper</td>
+      <td>Completed</td>
+      <td>Python</td>
+    </tr>
+    <tr>
+      <td>API Gateway</td>
+      <td>In Progress</td>
+      <td>Node.js</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+table {
+  width: 100%;
+  border-collapse: collapse; /* This merges double borders into single lines */
+  margin: 20px 0;
+  font-family: sans-serif;
+}
+
+th, td {
+  padding: 12px 15px;       /* Adds "breathing room" inside cells */
+  text-align: left;         /* Aligns text to the left */
+  border-bottom: 1px solid #ddd; /* Adds a clean separator line */
+}
+
+th {
+  background-color: #f4f4f4; /* Darkens header for contrast */
+  color: #333;
+}
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
