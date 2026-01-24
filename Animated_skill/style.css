@@ -1,0 +1,132 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    background-color: rgb(0, 174, 255);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.container{
+    width: 50vw;
+    height: auto;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: white;
+}
+.bar-container{
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto;
+    gap: 10px;
+}
+.bar{
+    height: 100%;
+    position: relative;
+    padding: px;
+}
+
+.head{
+    padding: 5px;
+    position: relative;
+       
+}
+
+
+
+.loading-bar{
+    width: auto;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+.load-bar{
+    border: 2px solid rgb(212, 212, 212);
+    height: 60%;
+    width: 100%;
+    border-radius: 50px;
+    background-color: rgb(212, 212, 212);
+    position: relative;
+}
+.load-bar::after{
+    content:'';
+    position: absolute;
+    background-color: rgb(0, 174, 255);
+    height: 100%;
+    width: 1%;
+    border-radius: 50px;
+    animation-delay: 1s;
+}
+
+.percentage-box{
+    background-color: rgb(0, 174, 255);
+    position: absolute;
+    top: 0;
+    padding: 3px;
+    left: 0px;
+    border-radius: 3px;
+    color: white;
+    display: flex;
+    justify-content: center;    
+    animation-delay: 1s;
+    visibility: hidden;
+}
+
+/* HTML - 90% */
+.bar:nth-child(1) .load-bar::after { animation: fill-90 1.5s ease-in-out forwards; }
+.bar:nth-child(1) .percentage-box { animation: move-90 1.5s ease-in-out forwards; }
+
+@keyframes fill-90 { 0% { width: 1%; } 100% { width: 90%; } }
+@keyframes move-90 { 0%,1% { transform: translateX(0); visibility: visible; } 100% { left: 87%; visibility: visible; } }
+
+/* CSS - 80% */
+.bar:nth-child(2) .load-bar::after {
+    animation: fill-80 1.5s ease-in-out forwards;
+    animation-delay: 0.3s; 
+
+}
+.bar:nth-child(2) .percentage-box {
+
+    animation: move-80 1.5s ease-in-out forwards;
+    animation-delay: 0.3s;
+ }
+
+@keyframes fill-80 { 0% { width: 1%; } 100% { width: 80%; } }
+@keyframes move-80 { 0%,1% { transform: translateX(0); visibility: visible; } 100% { left: 77%; visibility: visible; } }
+
+/* Nodejs - 75% */
+.bar:nth-child(3) .load-bar::after { animation: fill-75 1.5s ease-in-out forwards; animation-delay: 0.6s; }
+.bar:nth-child(3) .percentage-box { animation: move-75 1.5s ease-in-out forwards; animation-delay: 0.6s; }
+
+@keyframes fill-75 { 0% { width: 1%; } 100% { width: 75%; } }
+@keyframes move-75 { 0%,1% { transform: translateX(0); visibility: visible; } 100% { left: 72%; visibility: visible; } }
+
+/* Javascript - 85% */
+.bar:nth-child(4) .load-bar::after { animation: fill-85 1.5s ease-in-out forwards; animation-delay: 0.9s; }
+.bar:nth-child(4) .percentage-box { animation: move-85 1.5s ease-in-out forwards; animation-delay: 0.9s;}
+
+@keyframes fill-85 { 0% { width: 1%; } 100% { width: 85%; } }
+@keyframes move-85 { 0%,1% { transform: translateX(0); visibility: visible; } 100% { left: 82%; visibility: visible; } }
+
+
+.pointer-box{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(0, 174, 255);
+    transform: rotate(45deg);
+    bottom:-5px;
+}
+.title{
+    font-weight: bold;
+}
+
+p{
+    font-weight: bold;
+
+}
